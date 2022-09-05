@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .navbar {
+            display: flex;
+            background-color: rgb(21, 29, 29);
+        }
+
+        .nav-list {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-list li {
+            list-style: none;
+            padding: 36px 30px;
+            font-size: x-large;
+
+        }
+
+        .nav-list li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav-list li a:hover {
+            color: rgb(53, 159, 99);
+        }
+
+        .search {
+            width: 330px;
+            float: left;
+            margin-left: auto;
+            padding: 10px 0;
+        }
+
+        .srch {
+            font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
+            width: 200px;
+            height: 18px;
+            background: transparent;
+            border: 1px solid rgb(40, 144, 55);
+            margin-top: 13px;
+            color: aliceblue;
+            border-right: none;
+            font-size: 16px;
+            float: left;
+            padding: 10px;
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
+
+
+        }
+
+        .btnn {
+            width: 100px;
+            height: 40px;
+            background: rgb(12, 133, 38);
+            border: 2px solid rgb(148, 133, 128);
+            margin-top: 13px;
+            color: bisque;
+            font-size: 15px;
+            border-bottom-right-radius: 5px;
+            border-top-right-radius: 5px;
+
+        }
+
+        .btnn:focus {
+            outline: none;
+        }
+
+        .srch:focus {
+            outline: none;
+
+        }
+
+
+        #home {
+            background: linear-gradient(rgba(33, 33, 39, 0.3)30%, rgba(5, 2, 16, 0.7)70%), url("");
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 40px;
+
+        }
+
+        #home h2 {
+            color: white;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+        }
+
+        #home p {
+            width: 50%;
+            color: white;
+            font-size: 0.9rem;
+            line-height: 25px;
+        }
+
+        #home .btn {
+            margin-top: 30px;
+        }
+
+        #home a {
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 13px 35px;
+            background-color: white;
+            font-weight: 600;
+            border-radius: 5px;
+        }
+
+        #home a.blue {
+            color: aliceblue;
+            background: rgb(30, 6, 139);
+        }
+
+        #home a.blue:hover {
+            color: black;
+            background: white;
+        }
+
+        .thumbnail img {
+            height: 200px;
+            width: 350px;
+            border-radius: 10px;
+        }
+
+        .parent {
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            min-width: 80%;
+            margin: auto;
+        }
+
+        .para {
+            padding: 0 65px;
+        }
+
+        .second {
+            flex-direction: row-reverse;
+        }
+
+
+        #course {
+            padding: 8vw 8vw 8vw 8vw;
+            text-align: center;
+        }
+
+        #course .course-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-gap: 1rem;
+            margin-top: 50px;
+        }
+
+        #course .courses {
+            text-align: start;
+            background: rgb(240, 238, 237);
+            height: 100%;
+            position: relative;
+
+        }
+
+        #course .courses img {
+            width: 100%;
+            height: 60%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #course .courses .details {
+            padding: 15px 15px 0 15px;
+        }
+
+        #course .courses .details i {
+            color: #fdc93b;
+            font-size: .9rem;
+        }
+
+        #course .courses .cost {
+            background-color: rgb(60, 57, 57);
+            color: aliceblue;
+            line-height: 70px;
+            width: 70px;
+            height: 70px;
+            text-align: center;
+            border-radius: 50%;
+            position: absolute;
+            right: 15px;
+            bottom: 100px;
+
+        }
+
+
+        .center {
+            text-align: center;
+        }
+
+        .flex-center {
+            display: flex;
+            text-align: center;
+            height: 500px;
+            width: auto;
+            margin: 70px 100px;
+            background: rgb(71, 124, 145);
+        }
+
+        .cform {
+            min-width: 500px;
+            margin: 25px auto;
+
+        }
+
+        .cform-input {
+            display: flex;
+            margin: 14px 0;
+            padding: 5px 3px;
+            width: 30%;
+            font-size: 19px;
+            border: 2px solid rgb(164, 13, 13);
+            border-radius: 6px;
+            font-family: serif;
+        }
+
+        .fbtnn {
+            width: 150px;
+            height: 40px;
+            background: orangered;
+            border: none;
+            margin-top: 30px;
+            color: bisque;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+
+
+        }
+
+        .fbtnn:hover {
+            background-color: rgb(6, 43, 76);
+            color: rgb(176, 31, 38);
+
+        }
+
+        footer {
+            background-color: rgb(102, 141, 125);
+            height: 10vh;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="#home">Home</a> </li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#course">Collection of book</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <div class="search">
+                <input class="srch" name="" placeholder="Search Your Book">
+                <a href="#"><button class="btnn">Search</button></a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Make Change In Your Life With Our Book</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa praesentium eos ullam optio ea, autem quidem
+            aliquid quibusdam corrupti cumque error, pariatur impedit velit doloribus minima dignissimos veniam expedita
+            nostrum?</p>
+        <span>To Learn more</span>
+        <div class="btn">
+            <a class="blue" href="#">Connect</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="center">About</h2>
+        <div class="parent">
+            <div class="para">
+                <h1>this is lorem section</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate mollitia sequi magni
+                    tempore. Maxime, vitae omnis? Recusandae quod laudantium dolore fugit nesciunt cupiditate explicabo
+                    consequuntur dignissimos voluptatem. Distinctio asperiores, autem tempora omnis optio fugit sint,
+                    temporibus exercitationem neque quo necessitatibus maiores corporis ipsa fugiat aperiam hic nostrum
+                    nobis iste id alias similique doloribus reprehenderit ratione quas. Et in, dicta repellat magnam
+                    libero saepe explicabo, quaerat veniam mollitia cumque ducimus! Ut omnis harum debitis a sapiente
+                    autem tempore? Pariatur nostrum aliquid beatae recusandae autem, ducimus nihil dolorem laudantium
+                    quisquam molestiae totam voluptatum tempore culpa eaque excepturi illum natus labore adipisci.
+                    Adipisci, suscipit dolores. Consequuntur unde vitae ullam. Reiciendis voluptas deleniti inventore
+                    error facilis temporibus adipisci aliquid, tempora maxime eveniet dolor officiis laudantium iste
+                    illum voluptatibus expedita. Explicabo, iure error quo illo asperiores dolore nam et voluptatem.
+                    Quas ex quo earum quae dignissimos voluptatem cum ducimus iusto quam hic omnis nisi doloremque
+                    temporibus cumque minima, aperiam assumenda totam, ad dolores. Consequuntur sint enim accusamus cum
+                    doloribus, quam incidunt ut blanditiis qui ratione maiores animi nostrum? In, similique repudiandae
+                    quidem hic harum non explicabo beatae debitis? Corrupti explicabo, magnam vel assumenda quis eius
+                    provident pariatur blanditiis, aspernatur a nobis vitae maiores nulla?</p>
+            </div>
+            <div class="thumbnail">
+                <img src="images/library.jpg" alt="photo">
+            </div>
+        </div>
+        <div class="parent second">
+            <div class="para">
+                <h1>Here you can Know</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate mollitia sequi magni
+                    tempore. Maxime, vitae omnis? Recusandae quod laudantium dolore fugit nesciunt cupiditate explicabo
+                    consequuntur dignissimos voluptatem. Distinctio asperiores, autem tempora omnis optio fugit sint,
+                    temporibus exercitationem neque quo necessitatibus maiores corporis ipsa fugiat aperiam hic nostrum
+                    nobis iste id alias similique doloribus reprehenderit ratione quas. Et in, dicta repellat magnam
+                    libero saepe explicabo, quaerat veniam mollitia cumque ducimus! Ut omnis harum debitis a sapiente
+                    autem tempore? Pariatur nostrum aliquid beatae recusandae autem, ducimus nihil dolorem laudantium
+                    quisquam molestiae totam voluptatum tempore culpa eaque excepturi illum natus labore adipisci.
+                    Adipisci, suscipit dolores. Consequuntur unde vitae ullam. Reiciendis voluptas deleniti inventore
+                    error facilis temporibus adipisci aliquid, tempora maxime eveniet dolor officiis laudantium iste
+                    illum voluptatibus expedita. Explicabo, iure error quo illo asperiores dolore nam et voluptatem.
+                    Quas ex quo earum quae dignissimos voluptatem cum ducimus iusto quam hic omnis nisi doloremque
+                    temporibus cumque minima, aperiam assumenda totam, ad dolores. Consequuntur sint enim accusamus cum
+                    doloribus, quam incidunt ut blanditiis qui ratione maiores animi nostrum? In, similique repudiandae
+                    quidem hic harum non explicabo beatae debitis? Corrupti explicabo, magnam vel assumenda quis eius
+                    provident pariatur blanditiis, aspernatur a nobis vitae maiores nulla?</p>
+            </div>
+            <div class="thumbnail">
+                <img src="images/library.jpg" alt="photo">
+            </div>
+        </div>
+    </section>
+
+    <section id="course">
+        <h1>Our Collection Books</h1>
+        <p>Enhance Your Knowledge With These Books</p>
+        <div class="course-box">
+
+            <div class="courses">
+                <img src="images/laptop.png" alt="">
+                <div class="details">
+                    <span></span>
+                    <h6>Finder book</h6>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(259)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="courses">
+                <img src="images/library.jpg" alt="">
+                <div class="details">
+                    <span></span>
+                    <h6>G.K book</h6>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(159)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="courses">
+                <img src="images/laptop1.jpg" alt="">
+                <div class="details">
+                    <span></span>
+                    <h6>Yes book</h6>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(210)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="courses">
+                <img src="images/library.jpg" alt="">
+                <div class="details">
+                    <span></span>
+                    <h6>Health book</h6>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(149)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="courses">
+                <img src="images/laptop1.jpg" alt="">
+                <div class="details">
+                    <span></span>
+                    <h6>Environment book</h6>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(25)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="courses">
+                <img src="images/library.jpg" alt="">
+                <div class="details">
+                    <span></span>
+                    <h6>Mathematics book</h6>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(200)</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="contact">
+        <div class="center">
+            <h1 class="center">Contact Us </h1>
+            <div class="cform">
+                <input class="cform-input" type="text" name="name" id="name" placeholder="Enter your name">
+                <input class="cform-input" type="text" name="phone" id="phone" placeholder="Enter your phone">
+                <input class="cform-input" type="text" name="email" id="email" placeholder="Enter your email">
+                <textarea class="cform-input" name="text" id="text" cols="10" rows="5"
+                    placeholder="Ellaborate your concern"></textarea>
+                <button class="fbtnn">Submit</button>
+
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <p class="center">Copyright &copy;2022 </p>
+        <p class="center">Our Policy|All right reserved </p>
+    </footer>
+</body>
+
+</html>
